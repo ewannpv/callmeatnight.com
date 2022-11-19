@@ -41,7 +41,7 @@ const populateCarousel = () => {
     let songAvailability = songs[index].availability_date
       ? `<div class="carousel_song_available">
             <i class="fa-regular fa-calendar"></i>
-            AVAILABLE ${songs[index].availability_date}
+            AVAILABLE ON ${songs[index].availability_date}
           </div>`
       : ``;
 
