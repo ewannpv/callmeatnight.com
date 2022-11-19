@@ -93,14 +93,14 @@ body {
 }
 
 .btn_open_spotify {
-    margin-top: 12px!important;
-    width: auto!important;
-    background-color: #1db954!important;
-    border-color: #1db954!important;
-    color: white!important;
-    border-radius: 1rem!important;
+  margin-top: 12px !important;
+  width: auto !important;
+  background-color: /*#1db954*/ rgb(98, 98, 98) !important;
+  border-color: /*#1db954*/ rgb(98, 98, 98) !important;
+  color: white !important;
+  border-radius: 1rem !important;
 }
 .btn_social {
-  width: auto!important;
-  color: white!important;
+  width: auto !important;
+  color: white !important;
 }
