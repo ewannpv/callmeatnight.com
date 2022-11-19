@@ -8,8 +8,6 @@ const songs = [
   },
 ];
 
-console.log(songs);
-
 const populateCarousel = () => {
   for (let index = 0; index < songs.length; index++) {
     let songHeader = `<div class="carousel-item h-100 ${
@@ -54,8 +52,6 @@ const populateCarousel = () => {
 
     document.getElementById("carousel_items").innerHTML += songInnerHTML;
   }
-
-  console.log(document.getElementById("carousel_items").value);
 };
 
 populateCarousel();
