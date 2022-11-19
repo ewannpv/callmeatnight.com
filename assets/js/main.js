@@ -27,7 +27,8 @@ const populateCarousel = () => {
   />`;
     let songLink = songs[index].spotify_link
       ? `<div class="carousel_song_link">
-  <a href="${songs[index].spotify_link}" target="_blank">
+  <a href="${songs[index].spotify_link}" target="_blank" onclick="gtag('event', 'click', {'event_category': 'sound_carousel', 'event_label': '${songs[index].title}'});"
+  >
     <i
       class="fa-brands fa-spotify carousel_spotify_logo_available" ></i>
   </a></div>`
