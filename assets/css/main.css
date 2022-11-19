@@ -104,3 +104,15 @@ body {
   width: auto !important;
   color: white !important;
 }
+
+.end_credit {
+  margin: 12px;
+  color: rgb(180, 180, 180);
+  font-family: "Lato", helvetica, arial;
+  font-size: 10pt !important;
+}
+
+.end_credit, a {
+  color: rgb(180, 180, 180)!important;
+  text-decoration: none!important;
+}
