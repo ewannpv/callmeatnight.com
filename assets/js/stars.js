@@ -7,7 +7,7 @@ function randomPosition(min, max) {
 
 const stars = document.getElementById("left_section");
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 200; i++) {
   const top = randomPosition(1,98);
   const left = randomPosition(1,98);
   const random = Math.floor(Math.random() * sizes.length);

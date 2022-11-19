@@ -25,6 +25,9 @@ body {
   text-transform: none;
 }
 
+#right_section {
+z-index: 2;
+}
 #top_right_section {
   min-height: 400px;
   background-color: black;
