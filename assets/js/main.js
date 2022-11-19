@@ -1,3 +1,5 @@
+// ======== Data Section ========
+
 const songs = [
   {
     title: "Piscine de fleurs",
@@ -7,6 +9,8 @@ const songs = [
     spotify_link: "",
   },
 ];
+
+// ======== Script Section ========
 
 const populateCarousel = () => {
   for (let index = 0; index < songs.length; index++) {
