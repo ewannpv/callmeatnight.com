@@ -19,5 +19,5 @@ jobs:
                   PORT: ${{ secrets.PORT }}
                   KEY: ${{ secrets.SSHKEY }}
               with:
-                  source: 'admin,assets,index.html'
+                  source: '.'
                   target: '/root/public/callmeatnight.com/'
