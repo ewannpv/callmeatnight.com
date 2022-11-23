@@ -45,7 +45,7 @@ class Songs {
         if (elt.length === 0) return false;
 
         if (elt[0].cover_img_name) {
-            unlink(`${ASSETS_DIRECTORY}/${elt[0].cover_img_name}`);
+            unlink(`${ASSETS_DIRECTORY}/${elt[0].cover_img_name}`, () => {});
         }
 
         writeFileSync(this.path, JSON.stringify(this.songs));
