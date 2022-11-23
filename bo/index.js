@@ -5,6 +5,12 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const { json } = require('body-parser');
 const { resourceLimits } = require('worker_threads');
+const path = require('path');
+
+// Constants
+const ASSETS_DIRECTORY = path.join(__dirname, 'assets', 'songs');
+const SUPERSECRET_HEADER = 'c2FsdXQgY29wYWluIGNhIHZhIG91IHF1b2k/IE91YWlzIHRyYW5xdWlsbGU=';
+const PORT = 9887;
 
 const spfy_client_id = process.env.SPFY_CLIENT_ID;
 const spfy_client_secret = process.env.SPFY_CLIENT_SECRET;
@@ -42,13 +48,27 @@ class Songs {
         if (elt.length === 0) return false;
 
         if (elt[0].cover_img_name) {
-            unlink(`../assets/img/songs/${image_name}`);
+            unlink(`${ASSETS_DIRECTORY}/${image_name}`);
         }
 
         writeFileSync(this.path, JSON.stringify(this.songs));
         return true;
     }
 }
+
+const superSecureAuthMechanism = (req, res, next) => {
+    const auth_header = req.headers['X-Chlo-Auth'];
+
+    if (!auth_header) {
+        return res.status(401).end();
+    }
+
+    if (auth_header !== SUPERSECRET_HEADER) {
+        return res.status(401).end();
+    }
+
+    next();
+};
 
 const validateSong = (data) => {
     // TODO: Checks
@@ -71,7 +91,7 @@ app.get('/', (_, res) => {
     res.json(songs.getAll());
 });
 
-app.post('/', bodyParser.json({ limit: '25mb' }), (req, res) => {
+app.post('/', superSecureAuthMechanism, bodyParser.json({ limit: '25mb' }), (req, res) => {
     const song = req.body;
 
     if (!validateSong(song)) {
@@ -81,7 +101,7 @@ app.post('/', bodyParser.json({ limit: '25mb' }), (req, res) => {
     const file = song.img_data;
     const image_name = `img_${new Date().getTime()}.jpg`;
 
-    writeFileSync(`../assets/img/songs/${image_name}`, file);
+    writeFileSync(`${ASSETS_DIRECTORY}/${image_name}`, file);
 
     delete song.img_data;
     song.cover_img_name = image_name;
@@ -91,7 +111,7 @@ app.post('/', bodyParser.json({ limit: '25mb' }), (req, res) => {
     res.end();
 });
 
-app.post('/spfy', bodyParser.json(), (req, res) => {
+app.post('/spfy', superSecureAuthMechanism, bodyParser.json(), (req, res) => {
     if (!req.body.track_id) {
         return res.status(400).end();
     }
@@ -143,10 +163,10 @@ app.post('/spfy', bodyParser.json(), (req, res) => {
     });
 });
 
-app.delete('/:id', (req, res) => {
+app.delete('/:id', superSecureAuthMechanism, (req, res) => {
     if (songs.removeSong(req.params.id)) return res.end();
 
     return res.status(404).end();
 });
 
-app.listen(8080);
+app.listen(PORT);
