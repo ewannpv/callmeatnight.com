@@ -15,6 +15,5 @@ jobs:
                   username: ${{ secrets.USERNAME }}
                   password: ${{ secrets.PASSWORD }}
                   port: ${{ secrets.PORT }}
-                  strip_components: true
-                  source: 'admin,assets,index.html'
+                  source: 'admin/*,assets/*,index.html'
                   target: '/root/public/callmeatnight.com/'
