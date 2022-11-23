@@ -155,6 +155,7 @@ app.post('/spfy', superSecureAuthMechanism, bodyParser.json(), (req, res) => {
                 }
             );
         } else {
+            console.error('Spotify fail: ', error, body);
             return res.status(500).end('Spotify fail');
         }
     });
