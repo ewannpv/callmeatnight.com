@@ -1,5 +1,5 @@
 const getSongs = async () => {
-    return fetch('http://localhost:8080').then((res) => res.json());
+    return fetch(ENDPOINT).then((res) => res.json());
 };
 
 const run = async () => {

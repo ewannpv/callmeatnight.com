@@ -11,9 +11,9 @@ jobs:
             - name: Copy repository contents via scp
               uses: appleboy/scp-action@master
               with:
-                host: ${{ secrets.HOST }}
-                username: ${{ secrets.USERNAME }}
-                password: ${{ secrets.PASSWORD }}                 
-                port: ${{ secrets.PORT }}
-                source: '.'
-                target: '/root/public/callmeatnight.com/'
+                  host: ${{ secrets.HOST }}
+                  username: ${{ secrets.USERNAME }}
+                  password: ${{ secrets.PASSWORD }}
+                  port: ${{ secrets.PORT }}
+                  source: 'admin,assets,index.html'
+                  target: '/root/public/callmeatnight.com/'

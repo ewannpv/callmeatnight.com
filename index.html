@@ -1,119 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Favicon -->
 
-    <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png" />
+        <link rel="manifest" href="assets/img/favicon/site.webmanifest" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png" />
-    <link rel="manifest" href="assets/img/favicon/site.webmanifest" />
+        <title>Call Me At Night</title>
+        <meta content="" name="description" />
+        <meta content="" name="keywords" />
 
-    <title>Call Me At Night</title>
-    <meta content="" name="description" />
-    <meta content="" name="keywords" />
+        <!-- Main CSS Files -->
+        <link href="assets/css/main.css" rel="stylesheet" />
+        <link href="assets/css/stars.css" rel="stylesheet" />
 
-    <!-- Main CSS Files -->
-    <link href="assets/css/main.css" rel="stylesheet" />
-    <link href="assets/css/stars.css" rel="stylesheet" />
+        <!-- Vendor CSS File -->
+        <link href="assets/vendor/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Vendor CSS File -->
-    <link href="assets/vendor/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JD1NMVP6TD"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JD1NMVP6TD"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+            gtag('config', 'G-JD1NMVP6TD');
+        </script>
+    </head>
 
-        gtag('config', 'G-JD1NMVP6TD');
-    </script>
-</head>
-
-<body>
-    <template id="song-t">
-        <div class="carousel-item h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col text-center">
-                    <img class="carousel_song_cover center" alt="Album art" />
-                    <div class="carousel_song_link"></div>
-                    <div class="carousel_song_title"></div>
-                    <div class="carousel_song_artist"></div>
-                    <div class="carousel_song_available">
-                        <i class="fa-regular fa-calendar"></i>
-                        <span></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </template>
-    <div class="loader">
-        <div class="spinner-border" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <div class="container-fluid h-100">
-        <div class="row h-100">
-            <div class="col-lg-7" id="left_section">
-                <div class="row h-100 align-items-center stars">
-                    <div class="col text-center left_section_title">Call Me at Night</div>
-                </div>
-            </div>
-            <div class="col-lg-5" id="right_section">
-                <div class="row h-50" id="top_right_section">
-                    <div id="carousel" class="carousel slide">
-                        <div class="carousel-inner h-100" id="carousel_items"></div>
-                        <button class="carousel-control-prev carousel-control" type="button">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next carousel-control" type="button">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="row h-50 align-items-center" id="bottom_right_section">
-                    <div class="col-12 left_section_title">
-                        <div class="row text-center justify-content-center">
-                            <a href="https://www.instagram.com/_callmeatnight_/" alt="_callmeatnight_" target="_blank"
-                                onclick="gtag('event', 'open_instagram', {'event_category': 'button', 'event_label': 'instagram'});"
-                                class="btn_social"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="mailto:youcancallmeatnight@gmail.com" alt="youcancallmeatnight@gmail.com"
-                                target="_blank"
-                                onclick="gtag('event', 'open_email', {'event_category': 'button', 'event_label': 'email'});"
-                                class="btn_social"><i class="fa-regular fa-envelope"></i></a>
+    <body>
+        <template id="song-t">
+            <div class="carousel-item h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col text-center">
+                        <img class="carousel_song_cover center" alt="Album art" />
+                        <div class="carousel_song_link"></div>
+                        <div class="carousel_song_title"></div>
+                        <div class="carousel_song_artist"></div>
+                        <div class="carousel_song_available">
+                            <i class="fa-regular fa-calendar"></i>
+                            <span></span>
                         </div>
-                        <div class="row justify-content-center">
-                            <div type="button" class="btn btn-sm btn_open_spotify" target="_blank"
-                                onclick="gtag('event', 'open_spotify', {'event_category': 'button', 'event_label': 'follow_spotify'});">
-                                <i class="fa-brands fa-spotify"></i>
-                                Follow
+                    </div>
+                </div>
+            </div>
+        </template>
+        <div class="loader">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+                <div class="col-lg-7" id="left_section">
+                    <div class="row h-100 align-items-center stars">
+                        <div class="col text-center left_section_title">Call Me at Night</div>
+                    </div>
+                </div>
+                <div class="col-lg-5" id="right_section">
+                    <div class="row h-50" id="top_right_section">
+                        <div id="carousel" class="carousel slide">
+                            <div class="carousel-inner h-100" id="carousel_items"></div>
+                            <button class="carousel-control-prev carousel-control" type="button">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next carousel-control" type="button">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row h-50 align-items-center" id="bottom_right_section">
+                        <div class="col-12 left_section_title">
+                            <div class="row text-center justify-content-center">
+                                <a
+                                    href="https://www.instagram.com/_callmeatnight_/"
+                                    alt="_callmeatnight_"
+                                    target="_blank"
+                                    onclick="gtag('event', 'open_instagram', {'event_category': 'button', 'event_label': 'instagram'});"
+                                    class="btn_social"
+                                    ><i class="fa-brands fa-instagram"></i
+                                ></a>
+                                <a
+                                    href="mailto:youcancallmeatnight@gmail.com"
+                                    alt="youcancallmeatnight@gmail.com"
+                                    target="_blank"
+                                    onclick="gtag('event', 'open_email', {'event_category': 'button', 'event_label': 'email'});"
+                                    class="btn_social"
+                                    ><i class="fa-regular fa-envelope"></i
+                                ></a>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div
+                                    type="button"
+                                    class="btn btn-sm btn_open_spotify"
+                                    target="_blank"
+                                    onclick="gtag('event', 'open_spotify', {'event_category': 'button', 'event_label': 'follow_spotify'});"
+                                >
+                                    <i class="fa-brands fa-spotify"></i>
+                                    Follow
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Vendor JS File -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
-        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
-        crossorigin="anonymous"></script>
-    <script src="assets/vendor/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/d105705c82.js" crossorigin="anonymous"></script>
+        <!-- Vendor JS File -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script
+            src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+            crossorigin="anonymous"
+        ></script>
+        <script src="assets/vendor/js/bootstrap.bundle.min.js"></script>
+        <script src="https://kit.fontawesome.com/d105705c82.js" crossorigin="anonymous"></script>
 
-    <!-- Main JS Files -->
-    <script src="assets/js/stars.js"></script>
-    <script src="assets/js/app.js"></script>
-</body>
-
+        <!-- Main JS Files -->
+        <script src="assets/js/stars.js"></script>
+        <script src="assets/js/constants.js"></script>
+        <script src="assets/js/app.js"></script>
+    </body>
 </html>
