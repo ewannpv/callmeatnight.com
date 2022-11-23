@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+}
+
+ul.song-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 0;
+    display: flex;
+}
+
+li img {
+    max-height: 50px;
+    margin-right: 10px;
+}
+
+li .data {
+    display: flex;
+    align-items: center;
+}
+
+li .actions {
+    display: flex;
+    align-items: center;
+    width: 50px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
