@@ -3,12 +3,9 @@ const { readFileSync, existsSync, writeFileSync, unlink } = require('fs');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const request = require('request');
-const { json } = require('body-parser');
-const { resourceLimits } = require('worker_threads');
-const path = require('path');
 
 // Constants
-const ASSETS_DIRECTORY = path.join(__dirname, 'assets', 'songs');
+const ASSETS_DIRECTORY = '/var/www/callmeatnight.com/assets/img/songs';
 const SUPERSECRET_HEADER = 'c2FsdXQgY29wYWluIGNhIHZhIG91IHF1b2k/IE91YWlzIHRyYW5xdWlsbGU=';
 const PORT = 9887;
 

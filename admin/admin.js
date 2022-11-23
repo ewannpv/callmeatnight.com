@@ -13,7 +13,7 @@ const getData = () => {
                 clone.querySelector('.data span').innerHTML = `${songs[i].title} - ${songs[i].artist}`;
 
                 if (songs[i].cover_img_name)
-                    clone.querySelector('.data img').src = `assets/img/songs/${songs[i].cover_img_name}`;
+                    clone.querySelector('.data img').src = `/assets/img/songs/${songs[i].cover_img_name}`;
                 else if (songs[i].spfy_image) clone.querySelector('.data img').src = `${songs[i].spfy_image}`;
 
                 clone.querySelector('.actions').addEventListener('click', () => {

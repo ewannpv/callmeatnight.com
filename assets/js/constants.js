@@ -1,1 +1,1 @@
-const ENDPOINT = 'http://localhost:8080';
+const ENDPOINT = 'https://api.callmeatnight.com';
