@@ -18,7 +18,12 @@ const getData = () => {
 
                 clone.querySelector('.actions').addEventListener('click', () => {
                     if (window.confirm('Are you sure?')) {
-                        fetch(`${ENDPOINT}/${i}`, { method: 'DELETE' }).then((res) => {
+                        fetch(`${ENDPOINT}/${i}`, {
+                            method: 'DELETE',
+                            headers: {
+                                'X-Chlo-Auth': 'c2FsdXQgY29wYWluIGNhIHZhIG91IHF1b2k/IE91YWlzIHRyYW5xdWlsbGU=',
+                            },
+                        }).then((res) => {
                             if (res.status !== 200) {
                                 return alert('Error');
                             }
@@ -51,7 +56,10 @@ const main = () => {
 
         fetch(`${ENDPOINT}/spfy`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Chlo-Auth': 'c2FsdXQgY29wYWluIGNhIHZhIG91IHF1b2k/IE91YWlzIHRyYW5xdWlsbGU=',
+            },
             body: JSON.stringify({ track_id: formData.get('track_id') }),
         }).then((res) => {
             document.querySelector('#submit-spfy').removeAttribute('disabled');
@@ -89,7 +97,10 @@ const main = () => {
 
             fetch(`${ENDPOINT}`, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Chlo-Auth': 'c2FsdXQgY29wYWluIGNhIHZhIG91IHF1b2k/IE91YWlzIHRyYW5xdWlsbGU=',
+                },
                 body: JSON.stringify(body),
             }).then((res) => {
                 document.querySelector('#submit').removeAttribute('disabled');
