@@ -16,4 +16,4 @@ jobs:
                   password: ${{ secrets.PASSWORD }}
                   port: ${{ secrets.PORT }}
                   source: '.'
-                  target: '/root/public/callmeatnight.com/'
+                  target: '/var/www/callmeatnight.com/'
